@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminPage</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="views/about.js"></script>
+    <script src="views/blog.js "></script>
+    <script src="views/feedback.js"></script>
+    <link href="index.html" />
+</head>
+<body>
+    <div id="adminContent"></div>
+
+    <script>
+        adminView();
+        function adminView(){
+
+            html = `
+
+                <button onclick="addProjects()">Legg til Prosjekt</button><br>
+                <button onclick="addBlogCommitment()">Legg til Blog</button><br>
+                <button onclick="approveReview()"> Godkjen tilbakemeldinger</button>
+
+            `;
+            document.getElementById('adminContent').innerHTML = html;
+        }
+
+        function addBlogCommitment(){
+            html = `
+            <button onclick="adminView()"> tilbake </button>
+            <input type="text" placeholder="legg inn ett bloggInlegg" oninput="model.pagesContent.blogPage.content = this.value"></input>
+
+            <button onclick="addBlog()">Lagre</button>
+            `
+            document.getElementById('adminContent').innerHTML = html;
+        }
+
+        function addProjects(){
+            html= `
+            <button onclick="adminView()"> tilbake </button>
+
+            <input type="text" placeholder="tittel" oninput="model.pagesContent.projectPage.title = this.value"></input>
+            <input type="text" placeholder="beskrivelse" oninput="model.pagesContent.projectPage.description = this.value"></input>
+            <input type="text" placeholder="link" oninput="model.pagesContent.projectPage.linkToPage = this.value"></input>
+
+            <button onclick="addProjectToPage()">Lagre</button>
+            `;
+            document.getElementById('adminContent').innerHTML = html;
+        }
+
+
+        function addBlog(){
+            const blogComitment = model.pagesContent.blogPage.content;
+            var blogDate = new Date();
+
+            model.pagesContent.blogPage.push({
+                content: `${blogComitment}`,
+                date: `${blogDate}`,
+            })
+
+            blogPage();
+
+        }
+
+        async function addProjectToPage(){
+            //const projectTitle = model.pagesContent.projectPage.title;
+            //const projectDescription = model.pagesContent.projectPage.description;
+            //const projectLink = model.pagesContent.projectPage.linkToPage;
+
+            //model.pagesContent.projectPage.push({
+            //    title: `${projectTitle}`,
+            //    description: `${projectDescription}`,
+            //    linkToPage: `${projectLink}`
+            //})
+            const projectObject = {
+                title: model.pagesContent.projectPage.title,
+                description: model.pagesContent.projectPage.description,
+                linkToPage: model.pagesContent.projectPage.linkToPage,
+
+            };
+            const response = await axios.post('/api/projects', projectObject);
+            console.log(response);
+            await getData();
+           
+
+        }
+        async function getdata() {
+            const response = await axios.get('index.html');
+            const data = response.data;
+            console.table(data);
+            projectView();
+        }
+       
+
+
+    </script>
+</body>
+</html>
