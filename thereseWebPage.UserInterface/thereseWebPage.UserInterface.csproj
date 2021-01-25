@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\thereseWebPage.Core\thereseWebPage.Core.csproj" />
+    <ProjectReference Include="..\thereseWebPage.DataAccess\thereseWebPage.DataAccess.csproj" />
   </ItemGroup>
 
 

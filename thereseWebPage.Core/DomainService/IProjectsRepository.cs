@@ -7,7 +7,7 @@ namespace thereseWebPage.Core.DomainService
 {
     public interface IProjectsRepository
     {
-        bool Create(Projects projs);
-        IEnumerable<Projects> ReadAll();
+        bool Create(Project projs);
+        ProjectList ReadAll();
     }
 }

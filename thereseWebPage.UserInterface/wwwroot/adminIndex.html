@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/model.js"></script>
     <script src="views/about.js"></script>
-    <script src="views/blog.js "></script>
+    <script src="views/blog.js"></script>
     <script src="views/feedback.js"></script>
     <link href="index.html" />
 </head>
@@ -87,8 +87,8 @@
            
 
         }
-        async function getdata() {
-            const response = await axios.get('index.html');
+        async function getData() {
+            const response = await axios.get('/api/projects');
             const data = response.data;
             console.table(data);
             projectView();

@@ -8,6 +8,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thereseWebPage.Core", "thereseWebPage.Core\thereseWebPage.Core.csproj", "{D46431B1-7AC1-4739-9155-39A1C1B13DD5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thereseWebPage.DataAccess", "thereseWebPage.DataAccess\thereseWebPage.DataAccess.csproj", "{7DA903E6-F3CC-43CA-977B-8ECCC3944F31}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D46431B1-7AC1-4739-9155-39A1C1B13DD5} = {D46431B1-7AC1-4739-9155-39A1C1B13DD5}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1CE52925-05C4-420B-91A7-74C70382CBFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Outer", "Outer", "{C0DD9BFA-ED33-4FC8-A620-5A7AD087FABD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +37,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D8A71A69-E2B6-4B00-9723-BD1F9865DCBA} = {C0DD9BFA-ED33-4FC8-A620-5A7AD087FABD}
+		{D46431B1-7AC1-4739-9155-39A1C1B13DD5} = {1CE52925-05C4-420B-91A7-74C70382CBFB}
+		{7DA903E6-F3CC-43CA-977B-8ECCC3944F31} = {C0DD9BFA-ED33-4FC8-A620-5A7AD087FABD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1215D1C9-F7F4-4B5B-894B-8A05BBCB0B56}

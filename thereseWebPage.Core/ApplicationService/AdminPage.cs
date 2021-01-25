@@ -5,7 +5,7 @@ using System.Text;
 
 namespace thereseWebPage.Core.DomainModel
 {
-    //burde denne kanskje være i controller?
+    
     class AdminPage
     {
         Blog blog = new Blog();

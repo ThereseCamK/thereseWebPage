@@ -15,15 +15,15 @@ namespace thereseWebPage.Core.ApplicationService
             _projects = projects;
         }
 
-        public bool AddNewProject(Projects addNew)
+        public bool AddNewProject(Project addNew)
         {
             return _projects.Create(addNew);
         }
 
-        public Projects GetProjects()
+        public ProjectList GetProjects()
         {
             var allProjects = _projects.ReadAll();
-            return new Projects(allProjects);
+            return allProjects;
         }
     }
 }

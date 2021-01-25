@@ -10,6 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using thereseWebPage.Core.ApplicationService;
+using thereseWebPage.Core.DomainService;
+using thereseWebPage.DataAccess;
+
 
 namespace thereseWebPage.UserInterface
 {
@@ -25,7 +29,10 @@ namespace thereseWebPage.UserInterface
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ProjectService>();
+            services.AddSingleton<IProjectsRepository, ProjectInMemoryRepository>();
             services.AddControllers();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
