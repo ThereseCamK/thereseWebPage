@@ -31,8 +31,9 @@
         function addBlogCommitment(){
             html = `
             <button onclick="adminView()"> tilbake </button>
+            <input type="text" placeholder="Overskrift" oninput="model.pagesContent.blogPage.headLine = this.value"></input>
             <input type="text" placeholder="legg inn ett bloggInlegg" oninput="model.pagesContent.blogPage.content = this.value"></input>
-
+            <input type="date" placeholder="dato" oninput="model.pagesContent.blogPage.date = this.value"></input>
             <button onclick="addBlog()">Lagre</button>
             `
             document.getElementById('adminContent').innerHTML = html;
@@ -52,17 +53,35 @@
         }
 
 
-        function addBlog(){
-            const blogComitment = model.pagesContent.blogPage.content;
-            var blogDate = new Date();
+        async function addBlog() {
+            //const blogComitment = model.pagesContent.blogPage.content;
+            //var blogDate = new Date();
 
-            model.pagesContent.blogPage.push({
-                content: `${blogComitment}`,
-                date: `${blogDate}`,
-            })
+            //model.pagesContent.blogPage.push({
+            //    content: `${blogComitment}`,
+            //    date: `${blogDate}`,
+            //})
 
+            //blogPage();
+            const blogObj = {
+                
+                headLine: model.pagesContent.projectPage.headLine,
+                content: model.pagesContent.projectPage.content,
+                date: model.pagesContent.projectPage.date,
+
+        };
+            const response = await axios.post('/api/blog', blogObj);
+            console.log(response);
+            await getBlogData();
             blogPage();
 
+
+        }
+        async function getBlogData() {
+            const response = await axios.get('/api/blog');
+            const data = response.data;
+            console.table(data);
+            
         }
 
         async function addProjectToPage(){
@@ -83,15 +102,16 @@
             };
             const response = await axios.post('/api/projects', projectObject);
             console.log(response);
-            await getData();
-           
+            await getProjectData();
+            projectView();
 
         }
-        async function getData() {
+
+        async function getProjectData() {
             const response = await axios.get('/api/projects');
             const data = response.data;
             console.table(data);
-            projectView();
+          
         }
        
 

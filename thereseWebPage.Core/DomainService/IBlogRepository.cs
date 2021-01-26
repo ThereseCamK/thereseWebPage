@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using thereseWebPage.Core.DomainModel;
 
-namespace thereseWebPage.Core
+namespace thereseWebPage.Core.DomainService
 {
     public interface IBlogRepository
     {
         bool Create(Blog blog);
-        IEnumerable<Blog> ReadAll();
+        BlogList ReadAll();
 
     }
 }

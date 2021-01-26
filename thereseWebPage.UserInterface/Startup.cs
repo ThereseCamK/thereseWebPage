@@ -31,6 +31,10 @@ namespace thereseWebPage.UserInterface
         {
             services.AddScoped<ProjectService>();
             services.AddSingleton<IProjectsRepository, ProjectInMemoryRepository>();
+
+            services.AddScoped<BlogService>();
+            services.AddSingleton<IBlogRepository, BlogInMemoryRepository>();
+
             services.AddControllers();
 
         }

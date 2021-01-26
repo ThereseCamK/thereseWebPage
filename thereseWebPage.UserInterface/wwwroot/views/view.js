@@ -41,7 +41,7 @@ function view() {
     </div>
      `;
 
-    document.getElementById("content").innerHTML = html
+    document.getElementById("content").innerHTML = html;
 }
 
 updateView();
@@ -49,9 +49,9 @@ updateView();
 function updateView() {
     const page = model.app.currentpage;
     if (page === "projects") projectView();
-    else if (page === 'about') aboutView();
-    else if (page === 'blog') blogPage();
-    else if (page === 'feedback') feedbackPage();
+    if (page === 'about') aboutView();
+    if (page === 'blog') blogPage();
+    if (page === 'feedback') feedbackPage();
 
 }
 

@@ -35,9 +35,16 @@ const model = {
                 rating: 1,
             },
         ],
-
+        
         blogPage: [{
+                headLine: "first",
                 content: "test",
+                date: "18.01.21",
+
+        },
+            {
+                headLine: "second",
+                content: "dfdf",
                 date: "18.01.21",
 
             },
@@ -52,7 +59,12 @@ const model = {
                 title: "rekorder",
                 description: "side hvor det listet opp rekorder til brukeren",
                 linkToPage: href = "",
-            }
+            },
+            {
+                title: "test3",
+                description: "ingenting",
+                linkToPage: href = "www.facebook.no",
+            },
         ]
 
     },
