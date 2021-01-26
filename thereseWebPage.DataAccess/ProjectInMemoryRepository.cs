@@ -23,7 +23,7 @@ namespace thereseWebPage.DataAccess
 
         public ProjectList ReadAll()
         {
-            return null;
+            return new ProjectList(_projectList);
         }
     }
 }
