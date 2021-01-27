@@ -10,6 +10,10 @@
     <script src="views/blog.js"></script>
     <script src="views/feedback.js"></script>
     <script src="views/projects.js"></script>
+    <script src="admin/view/blogView.js"></script>
+    <script src="admin/controllers/blogController.js"></script>
+    <script src="admin/view/projectView.js"></script>
+    <script src="admin/controllers/projectController.js"></script>
     <link href="index.html" />
 </head>
 <body>
@@ -29,108 +33,9 @@
             document.getElementById('adminContent').innerHTML = html;
         }
 
-        function addBlogCommitment() {
-            html = `
-            <button onclick="adminView()"> tilbake </button><br>
-            <input type="text" placeholder="Overskrift" oninput="model.pagesContent.blogInput.headLine = this.value"></input><br>
-            <textarea type="text" placeholder="legg inn ett bloggInlegg" oninput="model.pagesContent.blogInput.content = this.value"></textarea><br>
-            <input type="media" placeholder="bilde" oninput="model.pagesContent.blogInput.picture = this.value"></input><br>
-            <input type="date" placeholder="dato" oninput="model.pagesContent.blogInput.date = this.value"></input><br>
-            <button onclick="addBlog()">Lagre</button>
-            `;
-            document.getElementById('adminContent').innerHTML = html;
-        }
-
- 
 
 
-        async function addBlog() {
-            //const blogComitment = model.pagesContent.blogPage.content;
-            //var blogDate = new Date();
-
-            //model.pagesContent.blogPage.push({
-            //    content: `${blogComitment}`,
-            //    date: `${blogDate}`,
-            //})
-
-            //blogPage();
-            const blogObj = {
-                
-                headLine: model.pagesContent.blogInput.headLine,
-                content: model.pagesContent.blogInput.content,
-                picture: model.pagesContent.blogInput.picture,
-                date: model.pagesContent.blogInput.date,
-
-        };
-            const response = await axios.post('/api/blog', {blogObj});
-            console.log(response);
-            await getBlogData();
-            blogPage();
-        }
-
-        async function getBlogData() {
-            const blogObj = {
-                
-                headLine: model.pagesContent.blogPage.headLine,
-                content: model.pagesContent.blogPage.content,
-                picture: model.pagesContent.blogPage.picture,
-                date: model.pagesContent.blogPage.date,
-
-            };
-            const response = await axios.get('/api/blog', {blogObj});
-            const data = response.data;
-            console.table(data);
-            
-        }
-
-        function addProjects(){
-            html= `
-            <button onclick="adminView()"> tilbake </button>
-
-            <input type="text" placeholder="tittel" oninput="model.pagesContent.projectInput.title = this.value"></input>
-            <input type="text" placeholder="beskrivelse" oninput="model.pagesContent.projectInput.description = this.value"></input>
-            <input type="text" placeholder="link" oninput="model.pagesContent.projectInput.linkToPage = this.value"></input>
-
-            <button onclick="addProjectToPage()">Lagre</button>
-            `;
-            document.getElementById('adminContent').innerHTML = html;
-        }
-
-        async function addProjectToPage(){
-            //const projectTitle = model.pagesContent.projectPage.title;
-            //const projectDescription = model.pagesContent.projectPage.description;
-            //const projectLink = model.pagesContent.projectPage.linkToPage;
-
-            //model.pagesContent.projectPage.push({
-            //    title: `${projectTitle}`,
-            //    description: `${projectDescription}`,
-            //    linkToPage: `${projectLink}`
-            //})
-            const projectObject = {
-                title: model.pagesContent.projectInput.title,
-                description: model.pagesContent.projectInput.description,
-                linkToPage: model.pagesContent.projectInput.linkToPage,
-
-            };
-            const response = await axios.post('/api/projects', { projectObject });
-            console.log(response);
-            await getProjectData();
-            
-
-        }
-
-        async function getProjectData() {
-            const projectObject = {
-                title: model.pagesContent.projectPage.title,
-                description: model.pagesContent.projectPage.description,
-                linkToPage: model.pagesContent.projectPage.linkToPage,
-
-            };
-            const response = await axios.get('/api/projects', {projectObject});
-            const data = response.data;
-            console.table(data);
-            projectView();
-        }
+       
        
 
 
