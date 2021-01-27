@@ -14,10 +14,9 @@
         linkToPage: model.pagesContent.projectInput.linkToPage,
 
     };
-    const response = await axios.post('/api/projects', { projectObject });
+    const response = await axios.post('/api/projects',  projectObject );
     console.log(response);
     await getProjectData();
-
 
 }
 

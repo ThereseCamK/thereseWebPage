@@ -6,10 +6,10 @@ namespace thereseWebPage.Core.DomainModel
 {
    public class Blog
    {
-       public string HeadLine { get; }
-       public string BlogContent { get; }
-       public object Picture { get; }
-       public DateTime PublishedDate { get; }
+       public string HeadLine { get; set; }
+       public string BlogContent { get; set; }
+       public object Picture { get; set; }
+       public DateTime PublishedDate { get; set; }
 
        public Blog()
        {

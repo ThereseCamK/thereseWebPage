@@ -25,9 +25,9 @@ namespace thereseWebPage.UserInterface.Controllers
         {
             var addNew = new Blog(
                 blogView.HeadLine,
-                blogView.blogContent,
+                blogView.BlogContent,
                 blogView.Picture,
-                blogView.publisedDate
+                blogView.PublisedDate
 
                 );
             _blogService.AddNewBlog(addNew);

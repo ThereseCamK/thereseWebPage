@@ -11,27 +11,27 @@
     const blogObj = {
 
         headLine: model.pagesContent.blogInput.headLine,
-        content: model.pagesContent.blogInput.content,
+        blogContent: model.pagesContent.blogInput.content,
         picture: model.pagesContent.blogInput.picture,
-        date: model.pagesContent.blogInput.date,
+        publisedDate: model.pagesContent.blogInput.date,
 
     };
-    const response = await axios.post('/api/blog', { blogObj });
+    const response = await axios.post('/api/blog',  blogObj );
     console.log(response);
     await getBlogData();
     blogPage();
 }
 
-async function getBlogData() {
-    const blogObj = {
+    async function getBlogData() {
+  /*  const blogObj = {
 
         headLine: model.pagesContent.blogPage.headLine,
         content: model.pagesContent.blogPage.content,
         picture: model.pagesContent.blogPage.picture,
         date: model.pagesContent.blogPage.date,
 
-    };
-    const response = await axios.get('/api/blog', { blogObj });
+    };*/
+    const response = await axios.get('/api/blog');
     const data = response.data;
     console.table(data);
 
