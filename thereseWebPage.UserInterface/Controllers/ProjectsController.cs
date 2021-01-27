@@ -22,12 +22,12 @@ namespace thereseWebPage.UserInterface.Controllers
         }
 
         [HttpPost]
-        public void Post(ProjectViewModel projectView)
+        public void Post(ProjectViewModel project)
         {
             var addNew = new Project(
-               projectView.Title, 
-               projectView.Description,
-               projectView.Links
+               project.Title, 
+               project.Description,
+               project.Links
             );
             _projectService.AddNewProject(addNew);
         }

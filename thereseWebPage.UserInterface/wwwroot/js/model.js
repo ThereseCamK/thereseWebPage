@@ -35,21 +35,32 @@ const model = {
                 rating: 1,
             },
         ],
-        
+        blogInput: {
+            headLine: "",
+            content: "",
+            picture: "",
+            date: "",
+        },
         blogPage: [{
                 headLine: "first",
-                content: "test",
+            content: "test",
+                picture: "",
                 date: "18.01.21",
 
         },
             {
                 headLine: "second",
                 content: "dfdf",
+                picture: "",
                 date: "18.01.21",
 
             },
         ],
-
+        projectInput: {
+            title: "",
+            description: "",
+            linkToPage: href = "",
+        },
         projectPage: [{
                 title: "Event",
                 description: "Det er en side hvor man kan lage eventer",

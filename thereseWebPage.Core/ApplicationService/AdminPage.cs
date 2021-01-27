@@ -9,11 +9,10 @@ namespace thereseWebPage.Core.DomainModel
     
     class AdminPage
     {
-        Blog blog = new Blog();
+        
         
         public void PostNewBlog()
-        {
-                
+        {    
         }
 
         public void PostNewProject()
