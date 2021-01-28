@@ -8,5 +8,6 @@
     ${blogs}
     `;
     console.log(blogs, 'viser denne noe?');
+
     document.getElementById('mainContent').innerHTML = html;
 }

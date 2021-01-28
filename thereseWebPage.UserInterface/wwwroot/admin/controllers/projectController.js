@@ -11,7 +11,7 @@
     const projectObject = {
         title: model.pagesContent.projectInput.title,
         description: model.pagesContent.projectInput.description,
-        linkToPage: model.pagesContent.projectInput.linkToPage,
+        links: model.pagesContent.projectInput.linkToPage,
 
     };
     const response = await axios.post('/api/projects',  projectObject );
@@ -21,13 +21,8 @@
 }
 
 async function getProjectData() {
-    const projectObject = {
-        title: model.pagesContent.projectPage.title,
-        description: model.pagesContent.projectPage.description,
-        linkToPage: model.pagesContent.projectPage.linkToPage,
-
-    };
-    const response = await axios.get('/api/projects', { projectObject });
+  
+    const response = await axios.get('/api/projects');
     const data = response.data;
     console.table(data);
     projectView();

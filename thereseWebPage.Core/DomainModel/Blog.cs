@@ -15,6 +15,7 @@ namespace thereseWebPage.Core.DomainModel
        {
            
        }
+
        public Blog(string headLine, string blogContent, object picture, DateTime publishedDate)
        {
            HeadLine = headLine;

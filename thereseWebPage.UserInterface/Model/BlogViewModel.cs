@@ -7,9 +7,10 @@ namespace thereseWebPage.UserInterface.Model
 {
     public class BlogViewModel
     {
-        public string BlogContent;
-        public DateTime PublisedDate;
-        public string HeadLine { get; }
+        public string BlogContent { get; set; }
+        
+        public string HeadLine { get; set; }
         public object Picture { get; set; }
+        public DateTime PublishedDate { get; set; }
     }
 }

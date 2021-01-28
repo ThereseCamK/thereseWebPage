@@ -7,8 +7,8 @@ namespace thereseWebPage.UserInterface.Model
 {
     public class ProjectViewModel
     {
-        public string Title { get; }
-        public string Description { get; }
-        public string Links { get; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string Links { get; set; }
     }
 }

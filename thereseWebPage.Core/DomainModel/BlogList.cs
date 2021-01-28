@@ -6,7 +6,7 @@ namespace thereseWebPage.Core.DomainModel
 {
     public class BlogList
     {
-        public IEnumerable<Blog> Blogs { get; }
+        public IEnumerable<Blog> Blogs { get; set; }
 
         public BlogList(IEnumerable<Blog> blogs)
         {
