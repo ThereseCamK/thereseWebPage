@@ -25,5 +25,6 @@ async function getProjectData() {
     const response = await axios.get('/api/projects');
     const data = response.data;
     console.table(data);
-    projectView();
+    //projectView(); //er til den hoved siden
+    addProjects(); //er til admin siden
 }

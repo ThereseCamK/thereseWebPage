@@ -20,6 +20,7 @@ async function getBlogData() {
     const response = await axios.get('/api/blog');
     const data = response.data;
     console.table(data);
-   // addBlogCommitment();
+    //blogPage(); //til hovedsiden
+    addBlogCommitment(); //tin admin siden
 
 }
