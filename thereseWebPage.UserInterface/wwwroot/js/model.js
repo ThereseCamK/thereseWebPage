@@ -42,17 +42,17 @@ const model = {
             date: "",
         },
         blogPage: [{
-                headLine: "first",
-            content: "test",
-                picture: "",
-                date: "18.01.21",
+                HeadLine: "first",
+                BlogContent: "test",
+                Picture: "",
+                PublishedDate: "18.01.21",
 
         },
             {
-                headLine: "second",
-                content: "dfdf",
+                HeadLine: "second",
+                BlogContent: "dfdf",
                 picture: "",
-                date: "18.01.21",
+                PublishedDate: "18.01.21",
 
             },
         ],
@@ -84,6 +84,6 @@ const model = {
         name: "Therese Camilla Kjær",
         town: "Larvik",
         phone: "413 77 965",
-        email: "therese@getacademy.no",
+        email: "theresecnord@gmail.com",
     }
 }

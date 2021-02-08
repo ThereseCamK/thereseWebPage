@@ -19,19 +19,21 @@
 <body>
     <div id="adminContent"></div>
 
-    <script>
-        adminView();
-        function adminView(){
+<script>
 
-            html = `
+
+    adminView();
+    function adminView(){
+
+        html = `
                 <button onclick="addProjects()">Legg til Prosjekt</button><br>
                 <button onclick="addBlogCommitment()">Legg til Blog</button><br>
                 <button onclick="approveReview()"> Godkjen tilbakemeldinger</button>
             `;
-            document.getElementById('adminContent').innerHTML = html;
-        }
+        document.getElementById('adminContent').innerHTML = html;
+    }
 
 
-    </script>
+</script>
 </body>
 </html>

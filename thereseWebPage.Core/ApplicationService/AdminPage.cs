@@ -9,15 +9,13 @@ namespace thereseWebPage.Core.DomainModel
     
     class AdminPage
     {
-        
-        
+
         public void PostNewBlog()
         {    
         }
 
         public void PostNewProject()
         {
-
         }
 
         public void ApproveOrDiscardReviews()

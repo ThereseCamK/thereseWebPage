@@ -2,7 +2,7 @@
 
     let blogComitments = model.pagesContent.blogPage;
 
-    const blogs = blogComitments.map(com => `<hr><div>${com.headLine} <br>${com.content} <br> Dato:${com.date} `).join('');
+    const blogs = blogComitments.map(com => `<hr><div>${com.HeadLine} <br>${com.BlogContent} <br> Dato:${com.PublishedDate} `).join('');
     let html = ` <h1>Blog Innlegg</h1>
             
     ${blogs}

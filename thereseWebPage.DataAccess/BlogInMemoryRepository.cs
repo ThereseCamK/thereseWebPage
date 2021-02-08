@@ -24,6 +24,7 @@ namespace thereseWebPage.DataAccess
 
         public BlogList ReadAll()
         {
+            
             return new BlogList(_blog);
         }
     }
