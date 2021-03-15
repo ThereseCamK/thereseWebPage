@@ -1,7 +1,9 @@
-﻿async function addBlog() {
+﻿let blogComitments = model.pagesContent.blogPage;
+
+async function addBlog() {
     //const blogComitment = model.pagesContent.blogPage.content;
     //var blogDate = new Date();
-    let blogComitments = model.pagesContent.blogPage;
+    //let blogComitments = model.pagesContent.blogPage;
     const blogObj = {
 
         headLine: model.pagesContent.blogInput.headLine,
@@ -11,17 +13,19 @@
 
     };
     const response = await axios.post('/api/blog', blogObj);
-    data = response.data;
-    console.log(data);
+    blogComitments = response.data;
+    console.log(blogComitments);
     await getBlogData();
+
+    addBlogCommitment();
    
 }
 async function getBlogData() {
-    let blogComitments = model.pagesContent.blogPage;
+    
     const response = await axios.get('/api/blog');
-    data = response.data;
-    console.table(data);
+    blogComitments = response.data;
+    console.table(blogComitments);
     //blogPage(); //til hovedsiden
-    addBlogCommitment(); //tin admin siden
+    addBlogCommitment(); //til admin siden
 
 }
