@@ -16,6 +16,7 @@
     };
     const response = await axios.post('/api/projects',  projectObject );
     console.log(response);
+
     await getProjectData();
 
 }

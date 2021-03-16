@@ -34,8 +34,8 @@ namespace thereseWebPage.UserInterface
 
             services.AddScoped<BlogService>();
             services.AddSingleton<IBlogRepository, BlogInMemoryRepository>();
-
-            services.AddControllers();
+            services.AddSwaggerDocument();
+             services.AddControllers();
 
         }
 
@@ -53,7 +53,9 @@ namespace thereseWebPage.UserInterface
 
             app.UseAuthorization();
             app.UseStaticFiles();
-
+            app.UseStaticFiles();
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

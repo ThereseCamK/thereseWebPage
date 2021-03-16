@@ -1,9 +1,22 @@
 ﻿let blogComitments = model.pagesContent.blogPage;
 
+function addNewBlog() {
+    const headLine = model.pagesContent.blogInput.headLine;
+    const blogContent = model.pagesContent.blogInput.content;
+    const picture = model.pagesContent.blogInput.picture;
+    const publishedDate = model.pagesContent.blogInput.date;
+
+    model.pagesContent.blogPage.push({
+        HeadLine: `${headLine}`,
+        BlogContent: `${blogContent}`,
+        Picture: `${picture}`,
+        PublisedDate: `${publishedDate}`
+    })
+    addBlog();
+    //console.log(blogComitments, 'head');
+}
 async function addBlog() {
-    //const blogComitment = model.pagesContent.blogPage.content;
-    //var blogDate = new Date();
-    //let blogComitments = model.pagesContent.blogPage;
+  
     const blogObj = {
 
         headLine: model.pagesContent.blogInput.headLine,
@@ -13,19 +26,19 @@ async function addBlog() {
 
     };
     const response = await axios.post('/api/blog', blogObj);
+    //blogComitments.push({ response });
     blogComitments = response.data;
-    console.log(blogComitments);
+    //console.log(blogComitments);
     await getBlogData();
+    blogPage();
 
-    addBlogCommitment();
-   
 }
 async function getBlogData() {
     
     const response = await axios.get('/api/blog');
     blogComitments = response.data;
-    console.table(blogComitments);
-    //blogPage(); //til hovedsiden
-    addBlogCommitment(); //til admin siden
+   // console.table(blogComitments);
+   // blogPage(blogComitments); //til hovedsiden
+    addBlogCommitment(blogComitments); //til admin siden
 
 }

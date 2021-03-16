@@ -60,6 +60,7 @@ const model = {
             title: "",
             description: "",
             linkToPage: href = "",
+            
         },
         projectPage: [{
                 title: "Event",
