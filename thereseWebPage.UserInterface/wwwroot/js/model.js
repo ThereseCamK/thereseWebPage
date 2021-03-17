@@ -59,23 +59,23 @@ const model = {
         projectInput: {
             title: "",
             description: "",
-            linkToPage: href = "",
+            link:  "",
             
         },
         projectPage: [{
                 title: "Event",
                 description: "Det er en side hvor man kan lage eventer",
-                linkToPage: href = "",
+                link:  "",
             },
             {
                 title: "rekorder",
                 description: "side hvor det listet opp rekorder til brukeren",
-                linkToPage: href = "",
+                link:  "",
             },
             {
                 title: "test3",
                 description: "ingenting",
-                linkToPage: href = "www.facebook.no",
+                link:  "www.facebook.no",
             },
         ]
 

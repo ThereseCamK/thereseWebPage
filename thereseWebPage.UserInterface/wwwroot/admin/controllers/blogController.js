@@ -1,6 +1,6 @@
 ﻿let blogComitments = model.pagesContent.blogPage;
 getBlogData();
-function addNewBlog() {
+async function addNewBlog() {
     const headLine = model.pagesContent.blogInput.headLine;
     const blogContent = model.pagesContent.blogInput.content;
     const picture = model.pagesContent.blogInput.picture;
@@ -13,7 +13,7 @@ function addNewBlog() {
         PublisedDate: `${publishedDate}`
     })
     addBlog();
-    //console.log(blogComitments, 'head');
+
 }
 async function addBlog() {
   

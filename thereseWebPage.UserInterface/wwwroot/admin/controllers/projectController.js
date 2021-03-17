@@ -1,22 +1,29 @@
-﻿async function addProjectToPage() {
-    //const projectTitle = model.pagesContent.projectPage.title;
-    //const projectDescription = model.pagesContent.projectPage.description;
-    //const projectLink = model.pagesContent.projectPage.linkToPage;
+﻿let projectComitments = model.pagesContent.projectPage;
+getProjectData();
+async function addProjectInput() {
+    const title = model.pagesContent.projectInput.title;
+    const description = model.pagesContent.projectInput.description;
+    const link = model.pagesContent.projectInput.link;
 
-    //model.pagesContent.projectPage.push({
-    //    title: `${projectTitle}`,
-    //    description: `${projectDescription}`,
-    //    linkToPage: `${projectLink}`
-    //})
+    model.pagesContent.projectPage.push({
+        title: `${title}`,
+        description: `${description} `,
+        link: `${link}`,
+
+    })
+    addProjectToPage();
+}
+async function addProjectToPage() {
+  
     const projectObject = {
         title: model.pagesContent.projectInput.title,
         description: model.pagesContent.projectInput.description,
-        links: model.pagesContent.projectInput.linkToPage,
+        links: model.pagesContent.projectInput.link,
 
     };
     const response = await axios.post('/api/projects',  projectObject );
-    console.log(response);
-
+  
+    projectComitments = response.data;
     await getProjectData();
 
 }
@@ -24,8 +31,12 @@
 async function getProjectData() {
   
     const response = await axios.get('/api/projects');
-    const data = response.data;
-    console.table(data);
-    //projectView(); //er til den hoved siden
+    projectComitments = response.data;
+    console.table(projectComitments);
+
+    model.pagesContent.projectPage = response.data.projects;
+
     addProjects(); //er til admin siden
+    projectView(); //er til den hoved siden
+   
 }
