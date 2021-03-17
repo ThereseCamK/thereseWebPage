@@ -37,7 +37,7 @@ async function getBlogData() {
     
     const response = await axios.get('/api/blog');
     blogComitments = response.data;
-   // console.table(blogComitments);
+    console.table(blogComitments);
    // blogPage(blogComitments); //til hovedsiden
     addBlogCommitment(blogComitments); //til admin siden
 

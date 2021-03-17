@@ -1,8 +1,8 @@
 ﻿
 function addBlogCommitment(blog) {
     let blogComitments = model.pagesContent.blogPage;
-    var listOfPosts = listOfBlogs(blog);
-    //const blogs = blogComitments.map(com => `<hr><div onclick="editBlog()">${com.HeadLine} <br>${com.BlogContent} <br> Picture:${com.Picture} `).join('');
+    
+    const blogs = blogComitments.map(com => `<hr><div onclick="editBlog()">${com.HeadLine} <br>${com.BlogContent} <br> Picture:${com.Picture} `).join('');
     html = `
             <button onclick="adminView()"> tilbake </button><br>
             <input type="text" placeholder="Overskrift" oninput="model.pagesContent.blogInput.headLine = this.value"></input><br>
@@ -11,18 +11,10 @@ function addBlogCommitment(blog) {
             <input type="date" placeholder="dato" oninput="model.pagesContent.blogInput.date = this.value"></input><br>
             <button onclick="addNewBlog()">Lagre blogg</button>
             
-            ${listOfPosts}
+            ${blogs}
 
     `;
   console.log(blog)
     document.getElementById('adminContent').innerHTML = html;
     
-}
-
-function listOfBlogs(blog) {
-    html = "";
-    for (let b of blog) {
-        html += b.HeadLine
-    }
-    return html;
 }
