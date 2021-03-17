@@ -18,7 +18,7 @@ async function addProjectToPage() {
     const projectObject = {
         title: model.pagesContent.projectInput.title,
         description: model.pagesContent.projectInput.description,
-        links: model.pagesContent.projectInput.link,
+        link: model.pagesContent.projectInput.link,
 
     };
     const response = await axios.post('/api/projects',  projectObject );
