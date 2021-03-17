@@ -1,5 +1,5 @@
 ﻿let blogComitments = model.pagesContent.blogPage;
-
+getBlogData();
 function addNewBlog() {
     const headLine = model.pagesContent.blogInput.headLine;
     const blogContent = model.pagesContent.blogInput.content;
@@ -30,15 +30,18 @@ async function addBlog() {
     blogComitments = response.data;
     //console.log(blogComitments);
     await getBlogData();
-    blogPage();
+   
 
 }
 async function getBlogData() {
-    
+ 
     const response = await axios.get('/api/blog');
     blogComitments = response.data;
     console.table(blogComitments);
-   // blogPage(blogComitments); //til hovedsiden
-    addBlogCommitment(blogComitments); //til admin siden
+
+    model.pagesContent.blogPage = response.data.blogs;
+
+    addBlogCommitment(); //til admin siden
+    blogPage(); //til hovedsiden
 
 }

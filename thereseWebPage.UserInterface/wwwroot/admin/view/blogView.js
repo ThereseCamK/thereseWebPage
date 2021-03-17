@@ -1,9 +1,18 @@
 ﻿
-function addBlogCommitment(blog) {
+function addBlogCommitment() {
     let blogComitments = model.pagesContent.blogPage;
-    
-    const blogs = blogComitments.map(com => `<hr><div onclick="editBlog()">${com.HeadLine} <br>${com.BlogContent} <br> Picture:${com.Picture} `).join('');
-    html = `
+   
+    const blogs = blogComitments.map(com => 
+        `
+        <hr>
+        <div onclick="editBlog()">
+            Overskrift: ${com.headLine} 
+            <br>
+            Innhold: ${com.blogContent} <br>
+            Picture:${com.picture} 
+        </div>
+    `).join('');
+    const html = `
             <button onclick="adminView()"> tilbake </button><br>
             <input type="text" placeholder="Overskrift" oninput="model.pagesContent.blogInput.headLine = this.value"></input><br>
             <textarea type="text" placeholder="legg inn ett bloggInlegg" oninput="model.pagesContent.blogInput.content = this.value"></textarea><br>
@@ -14,7 +23,6 @@ function addBlogCommitment(blog) {
             ${blogs}
 
     `;
-  console.log(blog)
     document.getElementById('adminContent').innerHTML = html;
-    
+
 }

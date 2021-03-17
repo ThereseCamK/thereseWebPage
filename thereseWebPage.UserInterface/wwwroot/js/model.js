@@ -42,17 +42,17 @@ const model = {
             date: "",
         },
         blogPage: [{
-                HeadLine: "first",
-                BlogContent: "test",
-                Picture: "",
-                PublishedDate: "18.01.21",
+            headLine: "first",
+            blogContent: "test",
+            picture: "",
+            publishedDate: "18.01.21",
 
         },
             {
-                HeadLine: "second",
-                BlogContent: "dfdf",
+                headLine: "second",
+                blogContent: "dfdf",
                 picture: "",
-                PublishedDate: "18.01.21",
+                publishedDate: "18.01.21",
 
             },
         ],
