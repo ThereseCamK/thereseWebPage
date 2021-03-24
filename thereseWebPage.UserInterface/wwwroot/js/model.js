@@ -42,39 +42,40 @@ const model = {
             date: "",
         },
         blogPage: [{
-                HeadLine: "first",
-                BlogContent: "test",
-                Picture: "",
-                PublishedDate: "18.01.21",
+            headLine: "first",
+            blogContent: "test",
+            picture: "",
+            publishedDate: "18.01.21",
 
         },
             {
-                HeadLine: "second",
-                BlogContent: "dfdf",
+                headLine: "second",
+                blogContent: "dfdf",
                 picture: "",
-                PublishedDate: "18.01.21",
+                publishedDate: "18.01.21",
 
             },
         ],
         projectInput: {
             title: "",
             description: "",
-            linkToPage: href = "",
+            link:  "",
+            
         },
         projectPage: [{
                 title: "Event",
                 description: "Det er en side hvor man kan lage eventer",
-                linkToPage: href = "",
+                link:  "",
             },
             {
                 title: "rekorder",
                 description: "side hvor det listet opp rekorder til brukeren",
-                linkToPage: href = "",
+                link:  "",
             },
             {
                 title: "test3",
                 description: "ingenting",
-                linkToPage: href = "www.facebook.no",
+                link:  "www.facebook.no",
             },
         ]
 

@@ -27,7 +27,7 @@ namespace thereseWebPage.UserInterface.Controllers
             var addNew = new Project(
                project.Title, 
                project.Description,
-               project.Links
+               project.Link
             );
             _projectService.AddNewProject(addNew);
         }

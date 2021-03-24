@@ -1,6 +1,6 @@
 ﻿function projectView() {
     const allProjects = model.pagesContent.projectPage;
-    const showAll = allProjects.map(pro => `<hr><div> Tittel:  ${pro.title}  <p>Beskrivelse:  ${pro.description}</p><br> Link til side:${pro.linkToPage}`).join(' ');
+    const showAll = allProjects.map(pro => `<hr><div> Tittel:  ${pro.title}  <p>Beskrivelse:  ${pro.description}</p><br> Link til side:${pro.link}`).join(' ');
 
     html = `
     <h1>PROSJEKTER</h1>

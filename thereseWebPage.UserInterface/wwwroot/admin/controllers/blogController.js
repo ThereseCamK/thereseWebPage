@@ -1,7 +1,22 @@
-﻿async function addBlog() {
-    //const blogComitment = model.pagesContent.blogPage.content;
-    //var blogDate = new Date();
-    let blogComitments = model.pagesContent.blogPage;
+﻿let blogComitments = model.pagesContent.blogPage;
+getBlogData();
+async function addNewBlog() {
+    const headLine = model.pagesContent.blogInput.headLine;
+    const blogContent = model.pagesContent.blogInput.content;
+    const picture = model.pagesContent.blogInput.picture;
+    const publishedDate = model.pagesContent.blogInput.date;
+
+    model.pagesContent.blogPage.push({
+        HeadLine: `${headLine}`,
+        BlogContent: `${blogContent}`,
+        Picture: `${picture}`,
+        PublisedDate: `${publishedDate}`
+    })
+    addBlog();
+
+}
+async function addBlog() {
+  
     const blogObj = {
 
         headLine: model.pagesContent.blogInput.headLine,
@@ -11,17 +26,22 @@
 
     };
     const response = await axios.post('/api/blog', blogObj);
-    data = response.data;
-    console.log(data);
+    //blogComitments.push({ response });
+    blogComitments = response.data;
+    //console.log(blogComitments);
     await getBlogData();
    
+
 }
 async function getBlogData() {
-    let blogComitments = model.pagesContent.blogPage;
+ 
     const response = await axios.get('/api/blog');
-    data = response.data;
-    console.table(data);
-    //blogPage(); //til hovedsiden
-    addBlogCommitment(); //tin admin siden
+    blogComitments = response.data;
+    console.table(blogComitments);
+
+    model.pagesContent.blogPage = response.data.blogs;
+
+    addBlogCommitment(); //til admin siden
+    blogPage(); //til hovedsiden
 
 }

@@ -2,12 +2,20 @@
 
     let blogComitments = model.pagesContent.blogPage;
 
-    const blogs = blogComitments.map(com => `<hr><div>${com.HeadLine} <br>${com.BlogContent} <br> Dato:${com.PublishedDate} `).join('');
+    const blogs = blogComitments.map(com => `
+            <div><hr>    ${com.headLine} <br>
+                  Innhold: ${com.blogContent} <br>
+                Bilde: ${com.picture}<br> 
+                Dato: ${com.publishedDate} 
+        </div>`).join('');
     let html = ` <h1>Blog Innlegg</h1>
             
     ${blogs}
     `;
-    console.log(blogs, 'viser denne noe?');
+    console.log(blogComitments, 'viser denne noe?');
+
 
     document.getElementById('mainContent').innerHTML = html;
+
+
 }
